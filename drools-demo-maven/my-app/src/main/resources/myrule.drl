@@ -1,0 +1,17 @@
+package demo
+
+import com.sample.model.Account
+
+rule "accountBalanceAtLeast"
+when
+$account : Account( balance < 50 )
+then
+System.out.println("Warning! money running out!");
+end
+
+rule "successTransaction"
+when
+$account : Account( balance < 300 )
+then
+System.out.println("Transaction success");
+end
